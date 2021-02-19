@@ -1,4 +1,6 @@
+import 'package:bank/transfer_form_screen.dart';
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,15 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Transferências"),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {},
-        ),
-      ),
+      home: TransferFormScreen(),
     );
   }
 }
