@@ -44,7 +44,7 @@ class TransferFormScreen extends StatelessWidget {
 
               if (bank != null && value != null) {
                 final newTransfer = Transfer(bank, value);
-                debugPrint("$newTransfer");
+                Navigator.pop(context, newTransfer);
               }
             },
           )
