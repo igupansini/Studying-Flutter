@@ -15,20 +15,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Transferências"),
+        title: const Text("Transferências"),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          final Future<Transfer> future =
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
             return TransferFormScreen();
-          }));
-          future.then((transferReceived) {
+          })).then((transferReceived) {
             if (transferReceived != null) {
               setState(() {
                 widget._list.add(transferReceived);
-                debugPrint("$transferReceived");
               });
             }
           });

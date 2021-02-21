@@ -9,7 +9,7 @@ class TransferFormScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Realizar Transferência"),
+        title: const Text("Realizar Transferência"),
       ),
       body: SingleChildScrollView(
         child: Column(
