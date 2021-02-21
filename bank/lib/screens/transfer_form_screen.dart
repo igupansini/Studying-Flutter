@@ -1,4 +1,4 @@
-import 'package:bank/transfer.dart';
+import 'package:bank/models/transfer.dart';
 import 'package:flutter/material.dart';
 
 class TransferFormScreen extends StatelessWidget {

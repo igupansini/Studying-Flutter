@@ -1,6 +1,6 @@
-import 'package:bank/transfer.dart';
-import 'package:bank/transfer_form_screen.dart';
-import 'package:bank/transfer_item.dart';
+import 'package:bank/models/transfer.dart';
+import 'package:bank/screens/transfer_form_screen.dart';
+import 'package:bank/widgets/transfer_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
