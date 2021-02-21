@@ -1,7 +1,6 @@
-import 'package:bank/models/balance.dart';
+import 'package:bank/screens/deposit_form_screen.dart';
 import 'package:bank/widgets/balance_card.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -16,16 +15,14 @@ class Dashboard extends StatelessWidget {
               child: BalanceCard(),
               alignment: Alignment.topCenter,
             ),
-            Consumer<Balance>(
-              builder: (context, balance, child) {
-                return RaisedButton(
-                  child: Text("Adicionar"),
-                  onPressed: () {
-                    balance.add(10);
-                  },
-                );
+            RaisedButton(
+              child: Text("Depositar"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DepositFormScreen();
+                }));
               },
-            ),
+            )
           ],
         ));
   }
