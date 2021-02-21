@@ -1,6 +1,6 @@
 import 'package:bank/models/transfer.dart';
 import 'package:bank/screens/transfer_form_screen.dart';
-import 'package:bank/widgets/transfer_item.dart';
+import 'package:bank/widgets/transfer_card.dart';
 import 'package:flutter/material.dart';
 
 class TransferListScreen extends StatefulWidget {
@@ -35,7 +35,7 @@ class _TransferListScreen extends State<TransferListScreen> {
         itemCount: widget._list.length,
         itemBuilder: (context, index) {
           final transfer = widget._list[index];
-          return TransferItem(transfer);
+          return TransferCard(transfer);
         },
       ),
     );

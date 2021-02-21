@@ -1,10 +1,10 @@
 import 'package:bank/models/transfer.dart';
 import 'package:flutter/material.dart';
 
-class TransferItem extends StatelessWidget {
+class TransferCard extends StatelessWidget {
   final Transfer _transfer;
 
-  TransferItem(this._transfer);
+  TransferCard(this._transfer);
 
   @override
   Widget build(BuildContext context) {
