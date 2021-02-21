@@ -3,16 +3,16 @@ import 'package:bank/transfer_form_screen.dart';
 import 'package:bank/transfer_item.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   final List<Transfer> _list = List();
 
   @override
-  Widget build(BuildContext context) {
-    
-    _list.add(Transfer("Caixa", 650));
-    _list.add(Transfer("Nubank", 2500));
-    _list.add(Transfer("Banco do Brasil", 1200));
+  _HomeScreenState createState() => _HomeScreenState();
+}
 
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Transferências"),
@@ -25,15 +25,19 @@ class HomeScreen extends StatelessWidget {
             return TransferFormScreen();
           }));
           future.then((transferReceived) {
-            _list.add(transferReceived);
-            debugPrint("$transferReceived");
+            if (transferReceived != null) {
+              setState(() {
+                widget._list.add(transferReceived);
+                debugPrint("$transferReceived");
+              });
+            }
           });
         },
       ),
       body: ListView.builder(
-        itemCount: _list.length,
+        itemCount: widget._list.length,
         itemBuilder: (context, index) {
-          final transfer = _list[index];
+          final transfer = widget._list[index];
           return TransferItem(transfer);
         },
       ),
