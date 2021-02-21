@@ -1,4 +1,3 @@
-import 'package:bank/models/balance.dart';
 import 'package:bank/widgets/balance_card.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,7 @@ class Dashboard extends StatelessWidget {
         title: const Text("Nullbank"),
       ),
       body: Align(
-        child: BalanceCard(Balance(60)),
+        child: BalanceCard(),
         alignment: Alignment.topCenter,
       ),
     );

@@ -1,8 +1,13 @@
 import 'package:bank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'models/balance.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => Balance(10.50),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
