@@ -5,7 +5,7 @@ import 'models/balance.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => Balance(10.50),
+    create: (context) => Balance(0),
     child: MyApp(),
   ));
 }

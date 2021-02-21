@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Balance extends ChangeNotifier {
-  final double value;
+  double value;
 
   Balance(this.value);
+
+  void add(double value) {
+    this.value += value;
+    notifyListeners();
+  }
+
+  void remove(double value) {
+    this.value -= value;
+    notifyListeners();
+  }
 
   @override
   String toString() {
