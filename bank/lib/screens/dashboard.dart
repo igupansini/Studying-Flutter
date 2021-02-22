@@ -1,6 +1,6 @@
 import 'package:bank/screens/deposit_form_screen.dart';
+import 'package:bank/screens/latest_transfers.dart';
 import 'package:bank/screens/transfer_form_screen.dart';
-import 'package:bank/screens/transfer_list_screen.dart';
 import 'package:bank/widgets/balance_card.dart';
 import 'package:flutter/material.dart';
 
@@ -40,14 +40,7 @@ class Dashboard extends StatelessWidget {
                 ),
               ],
             ),
-            RaisedButton(
-              child: Text("Transferências"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return TransferListScreen();
-                }));
-              },
-            ),
+            LatestTransfers(),
           ],
         ));
   }
