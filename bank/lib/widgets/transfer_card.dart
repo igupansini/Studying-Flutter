@@ -12,7 +12,7 @@ class TransferCard extends StatelessWidget {
         child: ListTile(
       leading: Icon(Icons.monetization_on),
       title: Text(_transfer.bank),
-      subtitle: Text(_transfer.value.toString()),
+      subtitle: Text(_transfer.toStringValue()),
     ));
   }
 }

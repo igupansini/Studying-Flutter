@@ -8,4 +8,8 @@ class Transfer {
   String toString() {
     return 'Transfer {bank: $bank, value: $value}';
   }
+
+  String toStringValue() {
+    return "R\$ $value";
+  }
 }
