@@ -1,5 +1,8 @@
+import 'package:bank/models/balance.dart';
 import 'package:bank/models/transfer.dart';
+import 'package:bank/models/transfers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class TransferFormScreen extends StatelessWidget {
   final TextEditingController _controllerBank = TextEditingController();
@@ -42,10 +45,17 @@ class TransferFormScreen extends StatelessWidget {
               onPressed: () {
                 final String bank = _controllerBank.text;
                 final double value = double.tryParse(_controllerValue.text);
+                final double currentBalance =
+                    Provider.of<Balance>(context, listen: false).value;
 
                 if (bank != null && value != null) {
-                  final newTransfer = Transfer(bank, value);
-                  Navigator.pop(context, newTransfer);
+                  if (value <= currentBalance) {
+                    final newTransfer = Transfer(bank, value);
+                    Provider.of<Transfers>(context, listen: false)
+                        .add(newTransfer);
+                    Provider.of<Balance>(context, listen: false).remove(value);
+                    Navigator.pop(context);
+                  }
                 }
               },
             )

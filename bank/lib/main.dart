@@ -1,3 +1,4 @@
+import 'package:bank/models/transfers.dart';
 import 'package:bank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +9,9 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (context) => Balance(0),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => Transfers(),
       ),
     ],
     child: MyApp(),
