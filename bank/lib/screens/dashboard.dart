@@ -1,4 +1,5 @@
 import 'package:bank/screens/deposit_form_screen.dart';
+import 'package:bank/screens/transfer_form_screen.dart';
 import 'package:bank/widgets/balance_card.dart';
 import 'package:flutter/material.dart';
 
@@ -15,14 +16,29 @@ class Dashboard extends StatelessWidget {
               child: BalanceCard(),
               alignment: Alignment.topCenter,
             ),
-            RaisedButton(
-              child: Text("Depositar"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return DepositFormScreen();
-                }));
-              },
-            )
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                RaisedButton(
+                  child: Text("Realizar depósito"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return DepositFormScreen();
+                    }));
+                  },
+                ),
+                RaisedButton(
+                  child: Text("Nova transferência"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return TransferFormScreen();
+                    }));
+                  },
+                ),
+              ],
+            ),
           ],
         ));
   }

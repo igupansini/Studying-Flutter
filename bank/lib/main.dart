@@ -4,8 +4,12 @@ import 'package:provider/provider.dart';
 import 'models/balance.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => Balance(0),
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => Balance(0),
+      ),
+    ],
     child: MyApp(),
   ));
 }
@@ -14,6 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          primaryColor: Colors.blue[800],
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.blue[800],
+            textTheme: ButtonTextTheme.primary,
+          )),
       debugShowCheckedModeBanner: false,
       home: Dashboard(),
     );
